@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Bowler } from './services/bowler';
-import { BOWLERS } from './services/bowlers-mock';
+import { BowlerService } from './services/bowlers.service';
+
+//import { BOWLERS } from './services/bowlers-mock';
 
 @Component({
   selector: 'app-bowlers',
@@ -11,21 +13,18 @@ import { BOWLERS } from './services/bowlers-mock';
 export class BowlersComponent implements OnInit {
 
   title = 'Bowlers of tomorrow';
-  /*bowler: Bowler = {
-    id: 1,
-    name: 'Melle Licious',
-    currentFrame: 0,
-    totalScore: 300,
-    doneBowling: false,
-  }*/
-
-  bowlersMock = BOWLERS;
+  //bowlersMock = BOWLERS;
   selectedBowler?: Bowler;
+  bowlers: Bowler[] = [];
 
-  constructor() { }
+  constructor(private bowlerService: BowlerService) { }
 
   ngOnInit(){
+    this.getBowlers();
+  }
 
+  getBowlers(): void {
+    this.bowlers = this.bowlerService.getBowlers();
   }
 
 
