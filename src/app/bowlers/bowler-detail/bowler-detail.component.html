@@ -1,0 +1,8 @@
+<div class="bowler-detail" *ngIf="bowler">
+  <h2>{{bowler.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{bowler.id}}</div>
+  <div class="">
+    <label for="name">Bowler: {{bowler.name}}</label><br>
+    <input id="name" [(ngModel)]="bowler.name">
+  </div>
+</div>

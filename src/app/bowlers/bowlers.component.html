@@ -1,0 +1,12 @@
+<div class="bowlers-container">
+  <h2>{{title}}</h2>
+  <ul class="bowlers">
+     <!-- #important -->
+    <li *ngFor="let bowler of bowlersMock"
+      [class.selected] ="bowler == selectedBowler"
+      (click)="onSelect(bowler)">
+      <span>{{bowler.id}}</span>{{bowler.name}}
+    </li>
+  </ul>
+  <app-bowler-detail [bowler] ="selectedBowler"></app-bowler-detail>
+</div>
