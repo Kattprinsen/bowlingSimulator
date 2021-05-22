@@ -1,6 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import{ Bowler } from '../services/bowler';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { Bowler } from '../services/bowler';
+import { BowlerService } from '../services/bowlers.service';
 
 @Component({
   selector: 'app-bowler-detail',
@@ -8,13 +12,32 @@ import{ Bowler } from '../services/bowler';
   styleUrls: ['./bowler-detail.component.css']
 })
 export class BowlerDetailComponent implements OnInit {
+  bowler: Bowler | undefined;
 
-  @Input() bowler?: Bowler;
+  /*
+  old waiting for input to display bowler from
+  bowlers component
+  */
+  //@Input() bowler?: Bowler;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private bowlerService:BowlerService,
+    private location: Location
+  ) {}
 
-  ngOnInit(){
+  ngOnInit(): void {
+    this.getBowler();
+  }
 
+  getBowler(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.bowlerService.getBowler(id)
+      .subscribe(bowler => this.bowler = bowler);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

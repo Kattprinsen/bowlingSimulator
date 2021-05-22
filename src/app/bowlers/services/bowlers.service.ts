@@ -20,4 +20,15 @@ export class BowlerService {
     this.messageService.add('BowlerService: fetching bowlers');
     return bowlers;
   }
+
+  /*
+  using the mock to find a bowler with an id
+  that matches the user wanted.
+  */
+  getBowler(id: number): Observable<Bowler> {
+    const bowler = BOWLERS.find(h => h.id === id)!;
+    this.messageService.add(`HeroService: fetched bowler id=${id}`);
+    return of(bowler);
+  }
+
 }

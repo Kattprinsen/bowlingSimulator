@@ -1,12 +1,17 @@
 <div class="bowlers-container">
   <h2>{{title}}</h2>
   <ul class="bowlers">
-     <!-- #important -->
+     <!-- #important
     <li *ngFor="let bowler of bowlers"
       [class.selected] ="bowler == selectedBowler"
       (click)="onSelect(bowler)">
       <span>{{bowler.id}}</span>{{bowler.name}}
+    </li>-->
+    <li *ngFor="let bowler of bowlers">
+      <a routerLink="/detail/{{bowler.id}}">
+        <span>{{bowler.id}}</span>{{bowler.name}}
+      </a>
     </li>
   </ul>
-  <app-bowler-detail [bowler] ="selectedBowler"></app-bowler-detail>
+  <!--<app-bowler-detail [bowler] ="selectedBowler"></app-bowler-detail>-->
 </div>

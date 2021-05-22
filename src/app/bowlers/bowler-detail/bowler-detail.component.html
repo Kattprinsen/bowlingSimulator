@@ -1,8 +1,9 @@
 <div class="bowler-detail" *ngIf="bowler">
   <h2>{{bowler.name | uppercase}} Details</h2>
   <div><span>id: </span>{{bowler.id}}</div>
-  <div class="">
+  <div class="bowler-edit">
     <label for="name">Bowler: {{bowler.name}}</label><br>
     <input id="name" [(ngModel)]="bowler.name">
   </div>
+  <button (click)="goBack()">go back</button>
 </div>
