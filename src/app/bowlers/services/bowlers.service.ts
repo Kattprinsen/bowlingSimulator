@@ -27,7 +27,7 @@ export class BowlerService {
   */
   getBowler(id: number): Observable<Bowler> {
     const bowler = BOWLERS.find(h => h.id === id)!;
-    this.messageService.add(`HeroService: fetched bowler id=${id}`);
+    this.messageService.add(`BowlerService: fetched bowler id=${id}`);
     return of(bowler);
   }
 

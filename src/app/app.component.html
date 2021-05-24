@@ -1,12 +1,19 @@
-<nav class="navbar navbar-dark bg-dark">
-  <span class="navbar-text">
-      <h1>{{title}}</h1>
-  </span>
-  <li class="nav-item"></li>
-    <a class="nav-link" routerLink="/dashboard">Dashboard</a>
-    <a class="nav-link" routerLink="/bowlers">Bowlers</a>
-</nav>
-<div class="container">
-  <router-outlet></router-outlet>
-  <app-messages></app-messages>
+<div class="d-flex flex-column h-100">
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" routerLinkActive="active" routerLink="/">{{title}}</a>
+    <!-- Spacer helper class -->
+    <div class="mr-auto"></div>
+    <div class="navbar-expand">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLinkActive="active" routerLink="/dashboard">Dashboard</a>
+        <a class="nat-item nav-link" routerLinkActive="active" routerLink="/bowlers">Bowlers</a>
+      </div>
+    </div>
+  </nav>
+  <main class="flex-shrink-0">
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="mt-auto">
+    <app-messages></app-messages>
+  </footer>
 </div>

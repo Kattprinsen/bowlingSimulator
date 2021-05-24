@@ -1,0 +1,35 @@
+export interface Scorecard {
+    id: number;
+    frame11: number;
+    frame12: number;
+    frame1Score: number;
+    frame21: number;
+    frame22: number;
+    frame2Score: number;
+    frame31: number;
+    frame32: number;
+    frame3Score: number;
+    frame41: number;
+    frame42: number;
+    frame4Score: number;
+    frame51: number;
+    frame52: number;
+    frame5Score: number;
+    frame61: number;
+    frame62: number;
+    frame6Score: number;
+    frame71: number;
+    frame72: number;
+    frame7Score: number;
+    frame81: number;
+    frame82: number;
+    frame8Score: number;
+    frame91: number;
+    frame92: number;
+    frame9Score: number;
+    frame101: number;
+    frame102: number;
+    frame10Score: number;
+    totalScore: number;
+    gameDone: false;
+}

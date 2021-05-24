@@ -1,17 +1,37 @@
-<div class="bowlers-container">
-  <h2>{{title}}</h2>
-  <ul class="bowlers">
-     <!-- #important
-    <li *ngFor="let bowler of bowlers"
-      [class.selected] ="bowler == selectedBowler"
-      (click)="onSelect(bowler)">
-      <span>{{bowler.id}}</span>{{bowler.name}}
-    </li>-->
-    <li *ngFor="let bowler of bowlers">
-      <a routerLink="/detail/{{bowler.id}}">
-        <span>{{bowler.id}}</span>{{bowler.name}}
-      </a>
-    </li>
-  </ul>
-  <!--<app-bowler-detail [bowler] ="selectedBowler"></app-bowler-detail>-->
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+      <div class="jumbotron">
+        <h2>{{title}}</h2>
+        <table class="table table-striped table-hover table-dark">
+          <caption>All them bowlers be bowling.</caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">currentFrame</th>
+              <th scope="col">totalScore</th>
+              <th scope="col">doneBowling</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let bowler of bowlers" routerLink="/detail/{{bowler.id}}">
+              <th scope="row">{{bowler.id}}</th>
+              <td>{{bowler.name}}</td>
+              <td>{{bowler.currentFrame}}</td>
+              <td>{{bowler.totalScore}}</td>
+              <td>{{bowler.doneBowling}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
+<!--<app-bowler-detail [bowler] ="selectedBowler"></app-bowler-detail>-->
+<!-- #important
+<li *ngFor="let bowler of bowlers"
+ [class.selected] ="bowler == selectedBowler"
+ (click)="onSelect(bowler)">
+ <span>{{bowler.id}}</span>{{bowler.name}}
+</li>-->

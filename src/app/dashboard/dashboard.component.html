@@ -1,8 +1,185 @@
-<div class="dashboard-container">
-  <h2>Lets get bowling!</h2>
-  <div class="bowlers-menu">
-    <a *ngFor="let bowler of bowlers" routerLink="/detail/{{bowler.id}}">
-      {{bowler.name}}
-    </a>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+      <h2 class="text-secondary">Lets get bowling!</h2>
+      <div class="bowlers-menu">
+        <a *ngFor="let bowler of bowlers" routerLink="/detail/{{bowler.id}}">
+          {{bowler.name}}
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+      <div class="btn-group" role="group" aria-label="Pins down?">
+        <button *ngFor="let scorecard of scorecards" type="button" (click)="pinsHit(scorecard, 0)" value="0" class="btn btn-secondary">0</button>
+        <button *ngFor="let scorecard of scorecards" type="button" (click)="pinsHit(scorecard, 1)" value="1" class="btn btn-secondary">1</button>
+        <button *ngFor="let scorecard of scorecards" type="button" (click)="pinsHit(scorecard, 2)" value="2" class="btn btn-secondary">2</button>
+        <button *ngFor="let scorecard of scorecards" type="button" (click)="pinsHit(scorecard, 3)" value="3" class="btn btn-secondary">3</button>
+        <button *ngFor="let scorecard of scorecards" type="button" (click)="pinsHit(scorecard, 4)" value="4" class="btn btn-secondary">4</button>
+        <button *ngFor="let scorecard of scorecards" type="button" (click)="pinsHit(scorecard, 5)" value="5" class="btn btn-secondary">5</button>
+        <button *ngFor="let scorecard of scorecards" type="button" (click)="pinsHit(scorecard, 6)" value="6" class="btn btn-secondary">6</button>
+        <button *ngFor="let scorecard of scorecards" type="button" (click)="pinsHit(scorecard, 7)" value="7" class="btn btn-secondary">7</button>
+        <button *ngFor="let scorecard of scorecards" type="button" (click)="pinsHit(scorecard, 8)" value="8" class="btn btn-secondary">8</button>
+        <button *ngFor="let scorecard of scorecards" type="button" (click)="pinsHit(scorecard, 9)" value="9" class="btn btn-secondary">9</button>
+        <button *ngFor="let scorecard of scorecards" type="button" (click)="pinsHit(scorecard, 10)" value="10" class="btn btn-secondary">10</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="bowling-card">
+          <div class="score-info" *ngFor="let scorecard of scorecards">
+            <div id="frame1" class="scoreCard">
+              <div class="frame">1</div>
+              <div class="scoreBox">
+                <div class="firstStrike">
+                  {{scorecard.frame11}}
+                </div>
+                <div class="secondStrike">
+                  {{scorecard.frame12}}
+                </div>
+                <div class="frameScorebox">
+                  {{scorecard.frame1Score}}
+                </div>
+              </div>
+            </div>
+            <div id="frame2" class="scoreCard">
+              <div class="frame">2</div>
+              <div class="scoreBox">
+                <div class="firstStrike">
+                  {{scorecard.frame21}}
+                </div>
+                <div class="secondStrike">
+                  {{scorecard.frame22}}
+                </div>
+                <div class="frameScorebox">
+                  {{scorecard.frame2Score}}
+                </div>
+              </div>
+            </div>
+            <div id="frame3" class="scoreCard">
+              <div class="frame">3</div>
+              <div class="scoreBox">
+                <div class="firstStrike">
+                  {{scorecard.frame31}}
+                </div>
+                <div class="secondStrike">
+                  {{scorecard.frame32}}
+                </div>
+                <div class="frameScorebox">
+                  {{scorecard.frame3Score}}
+                </div>
+              </div>
+            </div>
+            <div id="frame4" class="scoreCard">
+              <div class="frame">4</div>
+              <div class="scoreBox">
+                <div class="firstStrike">
+                  {{scorecard.frame41}}
+                </div>
+                <div class="secondStrike">
+                  {{scorecard.frame42}}
+                </div>
+                <div class="frameScorebox">
+                  {{scorecard.frame4Score}}
+                </div>
+              </div>
+            </div>
+            <div id="frame5" class="scoreCard">
+              <div class="frame">5</div>
+              <div class="scoreBox">
+                <div class="firstStrike">
+                  {{scorecard.frame51}}
+                </div>
+                <div class="secondStrike">
+                  {{scorecard.frame52}}
+                </div>
+                <div class="frameScorebox">
+                  {{scorecard.frame5Score}}
+                </div>
+              </div>
+            </div>
+            <div id="frame6" class="scoreCard">
+              <div class="frame">6</div>
+              <div class="scoreBox">
+                <div class="firstStrike">
+                  {{scorecard.frame61}}
+                </div>
+                <div class="secondStrike">
+                  {{scorecard.frame62}}
+                </div>
+                <div class="frameScorebox">
+                  {{scorecard.frame6Score}}
+                </div>
+              </div>
+            </div>
+            <div id="frame7" class="scoreCard">
+              <div class="frame">7</div>
+              <div class="scoreBox">
+                <div class="firstStrike">
+                  {{scorecard.frame71}}
+                </div>
+                <div class="secondStrike">
+                  {{scorecard.frame72}}
+                </div>
+                <div class="frameScorebox">
+                  {{scorecard.frame7Score}}
+                </div>
+              </div>
+            </div>
+            <div id="frame8" class="scoreCard">
+              <div class="frame">8</div>
+              <div class="scoreBox">
+                <div class="firstStrike">
+                  {{scorecard.frame81}}
+                </div>
+                <div class="secondStrike">
+                  {{scorecard.frame82}}
+                </div>
+                <div class="frameScorebox">
+                  {{scorecard.frame8Score}}
+                </div>
+              </div>
+            </div>
+            <div id="frame9" class="scoreCard">
+              <div class="frame">9</div>
+              <div class="scoreBox">
+                <div class="firstStrike">
+                  {{scorecard.frame91}}
+                </div>
+                <div class="secondStrike">
+                  {{scorecard.frame92}}
+                </div>
+                <div class="frameScorebox">
+                  {{scorecard.frame9Score}}
+                </div>
+              </div>
+            </div>
+            <div id="frame10" class="scoreCard">
+              <div class="frame">10</div>
+              <div class="scoreBox">
+                <div class="firstStrike">
+                  {{scorecard.frame101}}
+                </div>
+                <div class="secondStrike">
+                  {{scorecard.frame102}}
+                </div>
+                <div class="frameScorebox">
+                  {{scorecard.frame10Score}}
+                </div>
+              </div>
+            </div>
+            <div id="maxFrame" class="scoreCard maxFrame">
+              <div class="frame">Max Score</div>
+              <div class="totalScore">
+                <div class="totalScore">
+                  {{scorecard.totalScore}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
