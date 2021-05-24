@@ -1,10 +1,10 @@
-<div class="messages-container">
+<div class="py-3 bg-dark messages-container text-muted">
   <div *ngIf="messageService.messages.length">
-
     <h2>Messages</h2>
     <button class="btn btn-info clear btn-sm"
-            (click)="messageService.clear()">Clear messages</button><br>
-    <div *ngFor='let message of messageService.messages'> {{message}} </div>
-
+            (click)="messageService.clear()">Clear messages</button>
+    <div class="d-flex justify-content-between" *ngFor='let message of messageService.messages'>
+      <p>{{message}}</p>
+    </div>
   </div>
 </div>
